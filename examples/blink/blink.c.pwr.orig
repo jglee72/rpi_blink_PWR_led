@@ -26,7 +26,7 @@
 #include <unistd.h>
 #include "test.h"
 //#include "gtkwidget.h" //Not needed so far
-//#include <gtk/gtk.h> //Un comment to use with GUI shit
+#include <gtk/gtk.h> //Un comment to use with GUI shit
 
 // Blinks on RPi Plug P1 pin 11 (which is GPIO pin 17)
 #define PIN RPI_GPIO_P1_11
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
     
     printf("\n Starting Blinking of POWER LED\n");
 
-/*
+
     GtkWidget *image_button_down;
     GtkWidget *event_box_button_down;
 	
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 	//----- SET EVENTS TO BE CALLED ----- 
 	g_signal_connect(G_OBJECT(event_box_button_down), "button_press_event", G_CALLBACK(event_button_press_event), NULL);		//("button_press_event" must not be changed)
 	g_signal_connect(G_OBJECT(event_box_button_down), "button_release_event", G_CALLBACK(event_button_release_event), NULL);	//Include if you want the release event ("button_release_event" must not be changed)	
-*/	
+	
 
     if (!bcm2835_init())
  	    return 1;
